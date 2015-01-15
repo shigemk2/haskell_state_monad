@@ -6,5 +6,6 @@ main = do
         b <- local (+ 1) $ do     -- ネスト
             b' <- ask             -- localによる(+ 1)が影響
             return b'
-        c <- ask                  -- ネスト外では状態に変化はない
-        return (a, b, c)
+        -- c <- ask                  -- ネスト外では状態に変化はない
+        return b
+        -- return (a, b, c)
